@@ -1,16 +1,18 @@
-# JKFLIPFLOP-USING-IF-ELSE
 
-**AIM:** 
+# JKFLIPFLOP-USING-IF-ELSE
+### Deepshika hemanth kumar
+### 212224220020
+*AIM:* 
 
 To implement  JK flipflop using verilog and validating their functionality using their functional tables
 
-**SOFTWARE REQUIRED:**
+*SOFTWARE REQUIRED:*
 
 Quartus prime
 
-**THEORY**
+*THEORY*
 
-**JK Flip-Flop**
+*JK Flip-Flop*
 
 JK flip-flop is the modified version of SR flip-flop. It operates with only positive clock transitions or negative clock transitions. The circuit diagram of JK flip-flop is shown in the following figure.
 
@@ -32,17 +34,55 @@ By using three variable K-Map, we can get the simplified expression for next sta
 
 The maximum possible groupings of adjacent ones are already shown in the figure. Therefore, the simplified expression for next state Qt+1t+1 is Q(t+1)=JQ(t)′+K′Q(t)Q(t+1)=JQ(t)′+K′Q(t)
 
-**Procedure**
+*Procedure*
 
-/* write all the steps invloved */
+1.Open Quartus Prime and create a new project.
 
-**PROGRAM**
+2.Create a new Verilog HDL file and name it jk_flipflop.v.
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+3.Write the JK Flip-Flop code using if-else statements.
 
-**RTL LOGIC FOR FLIPFLOPS**
+4.Save the file and add it to the project.
 
-**TIMING DIGRAMS FOR FLIP FLOPS**
+5.Compile the project to check for errors.
 
-**RESULTS**
+6.Open the Simulation Waveform Editor (or ModelSim) to simulate.
+
+7.Apply various inputs (J, K, CLK, RST) and observe output Q.
+
+8.Compare the outputs with the JK flip-flop truth table.
+
+9.Save your design and submit results/report.
+
+*PROGRAM*
+
+
+
+
+module exp7(J,K,clk,q,qbar);
+input J,K,clk;
+output reg q;
+output reg qbar;
+initial q=0;
+initial qbar=1;
+always@(posedge clk)
+begin
+q=(J&(~q)|(~K)&q);
+qbar=~q;
+end
+endmodule
+
+
+*RTL LOGIC FOR FLIPFLOPS*
+
+![Screenshot 2025-04-16 153511](https://github.com/user-attachments/assets/cd32a82e-b2b5-4a0c-a602-c044ade8eb6e)
+
+
+*TIMING DIGRAMS FOR FLIP FLOPS*
+
+![Screenshot 2025-04-16 154542](https://github.com/user-attachments/assets/2c24bffe-3cbb-4623-9111-0b0ac2798809)
+
+
+*RESULTS*
+
+Designed and verified the implimentation of JK flipflop circuit and truthtable in quartus ii using verilog programming successfully.
